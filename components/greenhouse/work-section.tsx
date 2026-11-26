@@ -69,8 +69,8 @@ export function WorkSection({ rates, counts }: WorkSectionProps) {
     <section className="trab" id="trabalho" aria-labelledby="work-title">
       <div className="split">
         <div>
-          <h2 id="work-title">Quem prospectar e quanto trabalho dá.</h2>
-          <p>Criadores de surf, praia, esporte e viagens com público no Brasil ou no exterior. O plano de referência parte de 10 novos contatos por semana, em quatro semanas comerciais.</p>
+          <h2 id="work-title">Toda boa trip começa com alguém que junta pessoas.</h2>
+          <p>O papel do consultor não é empurrar uma viagem. É reconhecer quem compartilha essa energia, conectar a Greenhouse a criadores de surf, praia, esporte e viagem, e fazer um grupo sair da conversa e chegar à água. A referência parte de 10 novos contatos por semana.</p>
           <div className="crit">
             <div><h3>Público</h3><p>Seguidores no Brasil ou no exterior que interagem com surf e viagens em grupo.</p></div>
             <div><h3>Engajamento</h3><p>Comentários e perguntas que mostram interesse nas experiências.</p></div>

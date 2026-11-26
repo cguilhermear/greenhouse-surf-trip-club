@@ -10,8 +10,8 @@ export function CareerSection() {
     <section className="light" id="carreira" aria-labelledby="career-title">
       <div className="car">
         <div>
-          <h2 id="career-title">Uma carreira que cresce com os resultados.</h2>
-          <p>Antes da carteira, três semanas de treinamento com 60 reuniões comerciais no total.</p>
+          <h2 id="career-title">Uma carreira que pode começar com uma viagem.</h2>
+          <p>Aprenda a reunir pessoas e crescer com a comunidade. O caminho começa com três semanas de treinamento e 60 reuniões comerciais no total.</p>
           <div className="sem">
             <div><span>Semana 1</span><b className="num">10 reuniões</b></div>
             <div><span>Semana 2</span><b className="num">20 reuniões</b></div>

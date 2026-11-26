@@ -14,8 +14,8 @@ export function ContactSection({ status, onSubmit }: ContactSectionProps) {
         <ScenicBackground source="/images/hero.jpg" position="30% 50%" />
         <div className="split">
           <div>
-            <h2 id="contact-title">Não vendemos apenas viagens. Construímos uma comunidade que volta.</h2>
-            <p>Deixe seus dados e a Greenhouse chama você no WhatsApp para a conversa inicial.</p>
+            <h2 id="contact-title">Você conhece a galera. A gente cuida do resto.</h2>
+            <p>Quer ser consultor e levar sua comunidade para viver o surf em Saquarema? Deixe seus dados para a conversa inicial com a Greenhouse.</p>
           </div>
           <form onSubmit={onSubmit}>
             <label htmlFor="contact-name">Nome<input id="contact-name" name="nome" required autoComplete="name" /></label>

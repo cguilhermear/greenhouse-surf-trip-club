@@ -61,7 +61,7 @@ export function ValueSection({ annualTrips, selectedScenario, onAnnualTripsChang
         <div className="simulator-head">
           <div>
             <span className="eyebrow eyebrow-light">SIMULADOR DE CENÁRIO</span>
-            <h3 id="simulator-title">E se você fechar {annualTrips} {annualTrips === 1 ? "viagem" : "viagens"} no ano?</h3>
+            <h3 id="simulator-title">E se você fechar {annualTrips}{" "}{annualTrips === 1 ? "viagem" : "viagens"} no ano?</h3>
             <p>Altere sua meta anual. Comissão, público por viagem e referência de influenciadores seguem os números oficiais.</p>
           </div>
           <span className="official-badge"><ShieldCheck aria-hidden="true" /> Premissas oficiais travadas</span>

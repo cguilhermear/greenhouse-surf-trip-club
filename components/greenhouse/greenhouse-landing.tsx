@@ -18,6 +18,7 @@ import { ProcessSection } from "./process-section"
 import { ProjectionSection } from "./projection-section"
 import { RouteSection } from "./route-section"
 import { SiteNavigation } from "./site-navigation"
+import { SurfProgress } from "./surf-progress"
 import { ValueSection } from "./value-section"
 import { WorkSection } from "./work-section"
 
@@ -48,6 +49,7 @@ export function GreenhouseLanding() {
       const travel = distance()
       const progress = Math.min(1, Math.max(0, -route.getBoundingClientRect().top / Math.max(1, travel)))
       track.style.transform = `translate3d(${(-travel * progress).toFixed(1)}px, 0, 0)`
+      route.style.setProperty("--route-progress", `${progress * 100}%`)
     }
     const schedulePosition = () => {
       if (frame) return
@@ -60,6 +62,7 @@ export function GreenhouseLanding() {
       if (!horizontalMotion.matches) {
         route.classList.remove("hx")
         route.style.height = ""
+        route.style.removeProperty("--route-progress")
         track.style.transform = ""
         return
       }
@@ -88,19 +91,11 @@ export function GreenhouseLanding() {
 
     const motion = gsap.matchMedia()
     motion.add("(prefers-reduced-motion: no-preference)", () => {
-      gsap.from(".hero h1, .hero p, .hero .cta, .hero .stats", {
-        y: 28,
-        opacity: 0,
-        duration: 0.9,
-        stagger: 0.14,
-        ease: "power2.out",
-      })
-
       page.querySelectorAll<HTMLElement>("section:not(.rota) .bg, .photo-image-layer").forEach((layer) => {
         const trigger = layer.parentElement
         if (!trigger) return
-        gsap.fromTo(layer, { yPercent: -6 }, {
-          yPercent: 6,
+        gsap.fromTo(layer, { yPercent: -5 }, {
+          yPercent: 5,
           ease: "none",
           scrollTrigger: { trigger, start: "top bottom", end: "bottom top", scrub: true },
         })
@@ -108,8 +103,8 @@ export function GreenhouseLanding() {
 
       gsap.from(".nv", {
         height: 0,
-        duration: 1.1,
-        stagger: 0.18,
+        duration: 1,
+        stagger: 0.16,
         ease: "power3.out",
         scrollTrigger: { trigger: ".niveis", start: "top 80%" },
       })
@@ -140,6 +135,7 @@ export function GreenhouseLanding() {
     <div className="page-shell" ref={pageRef}>
       <a className="skip-link" href="#conteudo">Pular para o conteúdo</a>
       <SiteNavigation />
+      <SurfProgress />
       <main id="conteudo">
         <HeroSection />
         <InvitationSection />
@@ -162,8 +158,8 @@ export function GreenhouseLanding() {
         <ContactSection status={formStatus} onSubmit={submitContact} />
       </main>
       <footer>
-        <p>Greenhouse Saqua · Surf Trip Club · Saquarema, Rio de Janeiro.</p>
-        <p className="footer-note">Fontes: Apresentação Visual Saquarema 2026–2027 e Projeção e Funil Surf Trips. Metas ilustrativas, condições sujeitas à formalização; imagens ilustrativas.</p>
+        <p className="footer-brand">Greenhouse Surf Trip Club <span>·</span> Saquarema, Rio de Janeiro</p>
+        <p className="footer-note">Metas ilustrativas, condições sujeitas à formalização. Imagens ilustrativas.</p>
       </footer>
     </div>
   )

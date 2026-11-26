@@ -14,6 +14,7 @@ export function ScenicBackground({ source, priority = false, position }: ScenicB
         alt=""
         fill
         sizes="100vw"
+        quality={94}
         preload={priority}
         loading={priority ? "eager" : "lazy"}
         className="scenic-image"
